@@ -13,8 +13,8 @@ const getPhraseFromSpreadSheet = (): string => {
     .getValues()
     .filter(String);
 
-  const phraseArray = values.slice(1, values.length - 1);
-  const phraseSelector = Math.floor(Math.random() * (values.length - 1)) + 1;
+  const phraseArray = values.slice(1, values.length);
+  const phraseSelector = Math.floor(Math.random() * phraseArray.length);
   const text = phraseArray[phraseSelector].toString();
   return text;
 };
@@ -30,6 +30,6 @@ global.record = (): void => {
     payload: JSON.stringify(payload)
   };
   const url =
-    "https://hooks.slack.com/services/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";
+    "https://hooks.slack.com/services/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";
   UrlFetchApp.fetch(url, options);
 };
