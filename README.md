@@ -1,15 +1,15 @@
-# praise-bot
+# Book Remecommendtion Bot
 
-なかなか人に褒めてもらえない人へ、折角だったら可愛い人に褒めてもらいたい！
-そんな自己承認欲求を満たすbotです。
+積読している本はありませんか？私は大量にあります。この問題を解決するために、本をレコメンドしてくれるbotを作りました。しかしながらbotが本を勧めてくれるだけではモチベーションが上がらないので、本田翼さんの力をお借りしました・
 
 ## 仕様
 
-1時間に本田翼さんが褒めてくれます。著作権の関係で画像は表示できませんのでご了承ください。
+毎週土曜日の9時から10時に本田翼さんが本をレコメンドして頂けます。ついでに激励の一言も頂けます。
+著作権の関係で画像は表示できませんのでご了承ください。
 
 ## 詳細
 
 - TypeScript：ローカル環境でGoogle App Script (以下GAS)にコンパイルしてくれる[gas-clasp-starter](https://github.com/howdy39/gas-clasp-starter)を使用しています。
-- slackのbotはIncoming Webhoobotです。
-- GASのトリガーで1時間に1回コードが読み込まれ、コメントします。
-- 褒めフレーズは[Spread Sheet](https://docs.google.com/spreadsheets/d/10YAPVNZtbq8JVLtBX9VsAqmGXqfctZIyUjbcwRCHuXc/edit?usp=sharing)からランダムに呼び出しています。
+- slackのbotはIncoming Webhooks botです。
+- GASのトリガーで週1回コードが読み込まれるように設定しているため、コメントします。
+- 褒めフレーズと本のレコメンドはは[Spread Sheet](https://docs.google.com/spreadsheets/d/10YAPVNZtbq8JVLtBX9VsAqmGXqfctZIyUjbcwRCHuXc/edit?usp=sharing)からランダムに呼び出しています。
