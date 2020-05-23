@@ -52,6 +52,6 @@ global.record = (): void => {
     payload: JSON.stringify(payload)
   };
   const url =
-    "https://hooks.slack.com/services/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";
+    "https://hooks.slack.com/services/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";
   UrlFetchApp.fetch(url, options);
 };
