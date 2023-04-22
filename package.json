@@ -6,28 +6,20 @@
   "scripts": {
     "lint": "eslint --fix src/**/*.ts",
     "test": "jest",
-    "build": "npm run lint && rimraf dist && webpack && cpx src/appsscript.json dist && cpx \"src/**/*.html\" dist",
-    "push": "npm run build && clasp push"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/howdy39/gas-clasp-starter.git"
+    "build": "rimraf dist && webpack && cpx src/appsscript.json dist && cpx \"src/**/*.html\" dist",
+    "push": "clasp push"
   },
   "keywords": [
     "gas",
     "google-apps-script",
     "clasp"
   ],
-  "author": "howdy39",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/howdy39/gas-clasp-starter/issues"
-  },
-  "homepage": "https://github.com/howdy39/gas-clasp-starter#readme",
   "dependencies": {
     "global": "^4.4.0"
   },
   "devDependencies": {
+    "@google/clasp": "^2.4.2",
     "@types/google-apps-script": "1.0.57",
     "@types/jest": "29.4.0",
     "@typescript-eslint/eslint-plugin": "5.49.0",
