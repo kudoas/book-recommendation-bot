@@ -1,23 +1,13 @@
 {
-  "name": "gas-clasp-starter",
-  "version": "1.2.1",
-  "description": "",
-  "main": "index.js",
+  "name": "book-recommender",
+  "version": "1.0.0",
+  "description": "book recommendation using google apps script",
+  "main": "src/index.ts",
   "scripts": {
     "lint": "eslint --fix src/**/*.ts",
-    "test": "jest",
-    "build": "rimraf dist && webpack && cpx src/appsscript.json dist && cpx \"src/**/*.html\" dist",
     "push": "clasp push"
   },
-  "keywords": [
-    "gas",
-    "google-apps-script",
-    "clasp"
-  ],
   "license": "MIT",
-  "dependencies": {
-    "global": "^4.4.0"
-  },
   "devDependencies": {
     "@google/clasp": "^2.4.2",
     "@types/google-apps-script": "1.0.62",
@@ -29,19 +19,5 @@
     "gas-webpack-plugin": "2.4.0",
     "prettier": "2.8.7",
     "typescript": "5.0.4"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(src/.+(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
   }
 }
