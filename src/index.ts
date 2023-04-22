@@ -44,12 +44,12 @@ global.record = (): void => {
     "\n\n" +
     phrase;
   const payload = {
-    text: text
+    text: text,
   };
   const options: any = {
     method: "post",
     contentType: "application/json",
-    payload: JSON.stringify(payload)
+    payload: JSON.stringify(payload),
   };
   const url =
     "https://hooks.slack.com/services/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";
