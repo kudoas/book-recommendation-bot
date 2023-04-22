@@ -1,15 +1,21 @@
-# Book Remecommendtion Bot
+# Book Recommender
 
-積読している本はありませんか？私は大量にあります。この問題を解決するために、本をレコメンドしてくれるbotを作りました。しかしながらbotが本を勧めてくれるだけではモチベーションが上がらないので、本田翼さんの力をお借りしました。
+## Summary
 
-## 仕様
+スプレッドシートにまとめてある本リストから特定のものを選択して、incoming webhook で slack に通知します。
+スクリプトの定期実行は、Apps Scripts のトリガーを使用しています。
 
-毎週土曜日の9時から10時、本田翼さんに本を１つ選んでレコメンドして頂けます。ついでに激励の一言も頂けます。
-著作権の関係で画像は表示できませんのでご了承ください。
+## Tech
 
-## 詳細
+- TypeScript
+- [gas-clasp-starter](https://github.com/howdy39/gas-clasp-starter)
+- [Spread Sheet for GAS](https://developers.google.com/apps-script/guides/sheets)
+- slack: Incoming Webhooks
+- 定期実行: GAS のトリガー
 
-- TypeScript：ローカル環境でGoogle App Script (以下GAS)にコンパイルしてくれる[gas-clasp-starter](https://github.com/howdy39/gas-clasp-starter)を使用しています。
-- slackのbotはIncoming Webhooks botです。
-- GASのトリガーで週1回コードが読み込まれるように設定しています。
-- 褒めフレーズと本のレコメンドは[Spread Sheet](https://docs.google.com/spreadsheets/d/10YAPVNZtbq8JVLtBX9VsAqmGXqfctZIyUjbcwRCHuXc/edit?usp=sharing)からランダムに呼び出しています。
+# off topic
+
+ファイル間の import/export が難しいため 1 ファイルで記述しています
+（webpack などでバンドルすることも試しましたが、変換後の JS が GAS で対応していないことがありました）
+
+- 参考：[Google Apps Script のモダンな開発環境は理想だった](https://kenchan0130.github.io/post/2019-12-25-1)
