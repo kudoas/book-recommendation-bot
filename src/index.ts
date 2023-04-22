@@ -1,14 +1,10 @@
-import { getDayFormat } from "./util";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare let global: any;
+const spreadSheet = SpreadsheetApp.openById(
+  "10YAPVNZtbq8JVLtBX9VsAqmGXqfctZIyUjbcwRCHuXc"
+);
 
 const getPhraseFromSpreadSheet = (): string | any => {
-  const ss = SpreadsheetApp.openById(
-    "10YAPVNZtbq8JVLtBX9VsAqmGXqfctZIyUjbcwRCHuXc"
-  );
-  const sheet = ss.getSheetByName("sheet1");
-  const values = sheet.getDataRange().getValues();
+  const sheet1 = spreadSheet.getSheetByName("sheet1");
+  const values = sheet1.getDataRange().getValues();
 
   const phraseArray = values.slice(1, values.length);
   const phraseSelector = Math.floor(Math.random() * phraseArray.length);
@@ -17,18 +13,16 @@ const getPhraseFromSpreadSheet = (): string | any => {
 };
 
 const getBookFromSpreadSheet = (): string[] => {
-  const ss = SpreadsheetApp.openById(
-    "10YAPVNZtbq8JVLtBX9VsAqmGXqfctZIyUjbcwRCHuXc"
-  );
-  const sheet = ss.getSheetByName("sheet2");
-  const values = sheet.getDataRange().getValues();
+  const sheet2 = spreadSheet.getSheetByName("sheet2");
+  const values = sheet2.getDataRange().getValues();
   const books = values.slice(1, values.length);
   const bookSelector = Math.floor(Math.random() * books.length);
   const book = books[bookSelector];
   return book;
 };
 
-global.record = (): void => {
+// `function` keyword is required for Google Apps Script
+function main() {
   const phrase = getPhraseFromSpreadSheet();
   const book = getBookFromSpreadSheet();
   const text =
@@ -46,12 +40,15 @@ global.record = (): void => {
   const payload = {
     text: text,
   };
-  const options: any = {
+  const options: {
+    method: "get" | "post";
+    contentType: string;
+    payload: string;
+  } = {
     method: "post",
     contentType: "application/json",
     payload: JSON.stringify(payload),
   };
-  const url =
-    "https://hooks.slack.com/services/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";
+  const url = "https://hooks.slack.com/services/xxxxxxxxx";
   UrlFetchApp.fetch(url, options);
-};
+}
