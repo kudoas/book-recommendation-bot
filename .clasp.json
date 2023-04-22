@@ -1,4 +1,5 @@
 {
   "scriptId": "1U6VhH0KqI-k_6FvoyQET02TNQwXhpI_nwjU-Qj_fR62QOLnj2t8p3PWl",
-  "rootDir": "dist"
+  "rootDir": "src",
+  "fileExtension": "ts"
 }
